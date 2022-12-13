@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Booking\BookingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('booking')->group(function () {
+    Route::get('daily-occupancy-rates/{date}', [BookingController::class, 'calculateDailyOccupancyRate']);
+    Route::get('monthly-occupancy-rates/{date}', [BookingController::class, 'calculateMonthlyOccupancyRate']);
+
+    Route::post('createBooking', [BookingController::class, 'createBooking']);
+
+    Route::put('updateBooking', [BookingController::class, 'updateBooking']);
 });
