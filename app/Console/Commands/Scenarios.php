@@ -23,7 +23,7 @@ class Scenarios extends Command
      *
      * @var string
      */
-    protected $description = 'Create scenariso for test';
+    protected $description = 'Create scenarios for test';
 
     /**
      * Execute the console command.
