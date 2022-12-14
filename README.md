@@ -16,3 +16,10 @@ Run Migrations
 Run Unit and Feature Testing
 
 - `./vendor/bin/sail php artisan test`
+
+Test Endpoints
+
+- [POST] http://0.0.0.0:80/api/booking/createBooking
+- [UPDATE] http://0.0.0.0:80/api/booking/updateBooking
+- [GET] http://0.0.0.0:80/api/booking/daily-occupancy-rates/2022-01-02?rooms[]=97f881a4-a6d0-470c-a5a3-9b4e6712756e&rooms[]=97f881a4-a6f6-48be-85af-26d72bc46950
+- [GET] http://0.0.0.0:80/api/booking/monthly-occupancy-rates/2022-01?rooms[]=97f881a4-a6d0-470c-a5a3-9b4e6712756e&rooms[]=97f881a4-a6f6-48be-85af-26d72bc46950
