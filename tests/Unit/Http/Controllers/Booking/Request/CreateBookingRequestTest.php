@@ -5,6 +5,7 @@ namespace Tests\Unit\Http\Controllers\Booking\Request;
 use App\Domain\Room\Room;
 use App\Http\Controllers\Booking\Request\CreateBookingRequest;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Tests\RequestValidatorHelper;
 use Tests\TestCase;
 
@@ -37,7 +38,7 @@ class CreateBookingRequestTest extends TestCase
         $this->createFakeData();
 
         $this->assertTrue($this->validateField('room_id', $this->room->id));
-        $this->assertFalse($this->validateField('room_id', 'ABC123'));
+        $this->assertFalse($this->validateField('room_id', Str::uuid()));
         $this->assertFalse($this->validateField('room_id', null));
 
         $this->assertTrue($this->validateField('starts_at', '2022-01-02'));
