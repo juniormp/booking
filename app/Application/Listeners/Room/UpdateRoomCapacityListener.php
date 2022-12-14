@@ -23,6 +23,7 @@ class UpdateRoomCapacityListener
     public function handle(RoomBookedEvent $event): void
     {
         $room = $this->roomRepository->find($event->roomId);
+
         $room->decreaseCapacity();
         $this->roomRepository->save($room);
     }
