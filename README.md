@@ -17,6 +17,10 @@ Run Unit and Feature Testing
 
 - `./vendor/bin/sail php artisan test`
 
+Run Server
+
+- `./vendor/bin/sail php artisan serve`
+
 Test Endpoints
 
 - [POST] http://0.0.0.0:80/api/booking/createBooking
